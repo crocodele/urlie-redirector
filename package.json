@@ -27,6 +27,11 @@
     "sails-disk": "~0.10.9",
     "sails-redis": "^0.10.7"
   },
+  "devDependencies": {
+    "commitizen": "^2.8.6",
+    "cz-conventional-changelog": "^1.2.0",
+    "semantic-release": "^4.3.5"
+  },
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
@@ -42,7 +47,9 @@
   },
   "author": "Viktor Djupsjöbacka <viktor.djupsjobacka@iki.fi>",
   "license": "MIT",
-  "devDependencies": {
-    "semantic-release": "^4.3.5"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
