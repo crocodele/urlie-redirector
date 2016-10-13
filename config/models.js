@@ -17,7 +17,7 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-  // connection: 'localDiskDb',
+  connection: "redis",
 
   /***************************************************************************
   *                                                                          *
@@ -27,6 +27,15 @@ module.exports.models = {
   * See http://sailsjs.org/#!/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  // migrate: 'alter'
+  migrate: "alter",
+
+  // Setting for automatic primary keys in all models
+  autoPK: false,
+
+  // Setting for automatic definition of createdAt attribute in all models
+  autoCreatedAt: false,
+
+  // Setting for automatic definition of updatedAt attribute in all models
+  autoUpdatedAt: false,
 
 };
