@@ -1,6 +1,6 @@
 {
   "name": "urlie-redirector",
-  "description": "Urlie is a URL shortener service that allows custom domains and slugs",
+  "description": "Urlie is a URL shortener service that allows custom domains and slugs. The redirector part handles URL redirection.",
   "keywords": [
     "link",
     "shortener",
