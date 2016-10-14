@@ -46,6 +46,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  "GET /-:hash": "ShortUrlController.findByHash",
+  "GET /:hash": "ShortUrlController.findByHash",
 
 };
