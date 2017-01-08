@@ -15,28 +15,28 @@ module.exports = {
 
     // Get short URL by key
     ShortUrl.findOne({key: key})
-      .then(function(shortUrl) {
-        // Not found
-        if (!shortUrl) {
-          // Show 404 error page
-          return res.notFound();
-        }
+    .then(function(shortUrl) {
+      // Not found
+      if (!shortUrl) {
+        // Show 404 error page
+        return res.notFound();
+      }
 
-        // Log details for found short URL
-        sails.log.debug(
-          "Found short URL by key '" + key + "', " +
-          "pointing to target URL " + shortUrl.targetUrl
-        );
+      // Log details for found short URL
+      sails.log.debug(
+        "Found short URL by key '" + key + "', " +
+        "pointing to target URL " + shortUrl.targetUrl
+      );
 
-        // Redirect to target URL
-        return res.redirect(shortUrl.targetUrl);
-      })
-      .catch(function(error) {
-        // Log error
-        sails.log.error(error);
+      // Redirect to target URL
+      return res.redirect(shortUrl.targetUrl);
+    })
+    .catch(function(error) {
+      // Log error
+      sails.log.error(error);
 
-        // Show error page
-        return res.serverError(err);
-      });
+      // Show error page
+      return res.serverError(err);
+    });
   },
 };
