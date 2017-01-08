@@ -28,6 +28,7 @@
     "sails-redis": "^0.10.7"
   },
   "devDependencies": {
+    "barrels": "^1.6.4",
     "commitizen": "^2.9.5",
     "coveralls": "^2.11.15",
     "cz-conventional-changelog": "^1.2.0",

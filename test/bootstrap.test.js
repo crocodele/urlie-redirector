@@ -1,4 +1,5 @@
 var sails = require("sails");
+var Barrels = require("barrels");
 
 // Prepare for testing
 before(function(done) {
@@ -32,22 +33,10 @@ before(function(done) {
         return done(error);
       }
 
-      // Start with empty database
-      DomainCounter.native(function(error, collection) {
-        if (error) {
-          return done(error);
-        }
-
-        collection.flushdb(function(error, outcome) {
-          if (error || !outcome) {
-            return done(error);
-          }
-
-          // @TODO: Add fixtures, if necessary
-
-          // Success
-          done(error, sails);
-        });
+      // Load fixtures
+      barrels = new Barrels(process.cwd() + '/test/fixtures');
+      barrels.populate(function(error) {
+        done(error, sails);
       });
     }
   );
